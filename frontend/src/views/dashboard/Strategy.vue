@@ -133,6 +133,41 @@
         </v-col>
       </v-row>
 
+      <div class="d-flex justify-end">
+        <p
+          style="color: white; font-size: 90%"
+          v-if="checked.length == 1 && checked.includes('lowvar')"
+        >
+          변동성 : 최근 1년간 수익률의 표준편차, 시간에 따른 가격의 변동 정도
+        </p>
+        <p
+          style="color: white; font-size: 90%"
+          v-if="checked.length == 1 && checked.includes('momentum')"
+        >
+          위험조정수익률 : 누적수익률을 변동성으로 나누어 위험을 고려한 지표
+        </p>
+        <p
+          style="color: white; font-size: 90%"
+          v-if="checked.length == 1 && checked.includes('quality')"
+        >
+          퀄리티 합계(F-score) : 재무적 우량 정도를 수익성, 재무 성과, 운영
+          효율성으로 구분해 총 7개의 지표로 계산
+        </p>
+        <p
+          style="color: white; font-size: 90%"
+          v-if="checked.length == 1 && checked.includes('value')"
+        >
+          PER(주가수익비율) : 주가를 주당순이익으로 나눈 수치, 주가가 1주당
+          수익의 몇배가 되는가를 나타냄
+          <br />
+          PBR(주가순자산비율) : 주가를 주당순자산가치로 나눈 수치, 주가가 한
+          주당 몇 배로 매매되고 있는지를 나타냄
+          <br />
+          PSR(주가매출비율) : 주가를 주당매출액으로 나눈 수치, 주가가 1주당
+          매출의 몇배가 되는가를 나타냄
+        </p>
+      </div>
+
       <!-- table -->
       <v-data-table
         :headers="headers"
@@ -239,7 +274,7 @@ export default {
             { text: "PER", value: "per", width: "15%" },
             { text: "PSR", value: "psr", width: "15%" },
             { text: "PBR", value: "pbr", width: "15%" },
-            { text: "F-Score", sortable: false, value: "score", width: "15%" },
+            { text: "순위합", sortable: false, value: "score", width: "15%" },
           ];
           this.filtertable = this.valuetable;
         }
@@ -357,6 +392,7 @@ export default {
               code: i.code,
             });
           }
+          self.checked = ["lowvar"];
         })
         .catch(function (err) {
           alert(err);

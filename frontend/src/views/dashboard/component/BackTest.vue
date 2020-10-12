@@ -8,7 +8,25 @@
         </v-radio-group>
 
         <v-col cols="1.5">
-          <p class="text-left mb-0" style="color: white">리밸런싱 기간(개월)</p>
+          <span class="text-left" style="color: white"
+            >리밸런싱 기간(개월)</span
+          >
+          <v-tooltip bottom max-width="1150px" nudge-right="0px;">
+            <template v-slot:activator="{ on, attrs }">
+              <span
+                v-bind="attrs"
+                v-on="on"
+                style="color: white; margin: 0px 0px 50px 5px"
+                >?</span
+              >
+            </template>
+            <span>
+              <p>
+                <br />보유한 주식을 모두 매도하고 다시 새로운 주식을 매수하는
+                간격
+              </p>
+            </span>
+          </v-tooltip>
           <v-slider
             v-model="rebalance"
             :tick-labels="ticksLabels"

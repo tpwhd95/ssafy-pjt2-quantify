@@ -1,6 +1,42 @@
 <template>
   <div id="app">
     <v-app-bar id="app-bar" absolute app color="transparent" flat height="75">
+      <!-- <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn class="mt-4" color="#283593" dark v-bind="attrs" v-on="on">
+            퀀트 용어 사전
+          </v-btn>
+        </template>
+        <div style="background-color: #0c154a; width: 800px; height: 600px">
+          <v-row>
+            <v-col style="margin-left: 15px">
+              <v-autocomplete
+                v-model="searchModel"
+                :items="items"
+                :search-input.sync="search"
+                hide-no-data
+                hide-selected
+                item-text="name"
+                dark
+                placeholder="종목 입력"
+                prepend-icon="mdi-magnify"
+                return-object
+                style="width: 100%"
+              ></v-autocomplete>
+            </v-col>
+            <v-col>
+              <v-card
+                color="#192DA1"
+                class="py-2"
+                style="width: 90%; margin-top: 3px"
+                dark
+              >
+              </v-card>
+            </v-col>
+          </v-row>
+        </div>
+      </v-menu> -->
+
       <v-spacer />
       <v-autocomplete
         v-model="searchModel"
@@ -14,7 +50,7 @@
         prepend-icon="mdi-magnify"
         return-object
       ></v-autocomplete>
-      <div class="mx-3" />
+      <!-- <div class="mx-3" /> -->
 
       <!-- login -->
       <v-btn
