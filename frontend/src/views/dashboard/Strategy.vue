@@ -489,4 +489,7 @@ export default {
 p {
   font-size: 130%;
 }
+.v-data-table /deep/ tbody /deep/ tr:hover{
+  cursor:pointer !important;
+}
 </style>
