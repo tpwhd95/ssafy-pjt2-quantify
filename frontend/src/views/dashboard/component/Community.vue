@@ -99,3 +99,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.v-data-table /deep/ tbody /deep/ tr:hover{
+  cursor:pointer !important;
+}
+</style>
