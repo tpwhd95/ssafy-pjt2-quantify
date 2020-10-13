@@ -24,6 +24,9 @@
         </v-btn>
       </v-row>
     </base-material-card>
+    <v-overlay :value="overlay">
+      <v-progress-circular indeterminate size="64"></v-progress-circular>
+    </v-overlay>
   </v-container>
 </template>
 <script>
@@ -46,6 +49,7 @@ export default {
         { text: "Reg Date", value: "regDt" },
       ],
       desserts: [],
+      overlay: true,
     };
   },
   created() {
@@ -77,6 +81,7 @@ export default {
               regDt: reg,
             });
           });
+          this.overlay=false
         })
         .catch((error) => {
           console.log(error);
