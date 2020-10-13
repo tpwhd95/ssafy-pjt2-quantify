@@ -46,8 +46,7 @@ class MM:
             price_variability = price_profit.std() * np.sqrt(len(stock_price))
 
             # df.loc[i, ['종목']] = stock_code
-            df.loc[i, ['종목']] = stock['name']
-            df.loc[i, ['code']] = stock['code']
+
             # 누적수익률
             try:
                 accumulated_price_profit = price_profit + 1
@@ -58,7 +57,8 @@ class MM:
 
                 # 위험조정수익률(누적수익률/변동성)
                 risk_adjust_profit = accumulated_price_profit / price_variability
-
+                df.loc[i, ['종목']] = stock['name']
+                df.loc[i, ['code']] = stock['code']
                 df.loc[i, ['위험조정수익률']] = risk_adjust_profit
             except:
                 continue
