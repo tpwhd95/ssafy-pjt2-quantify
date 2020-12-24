@@ -20,7 +20,7 @@
 
 ###  심효빈 : CTO, Backend
 
-###  박세종 : Backend
+###  박세종 : Backend, Frontend
 
 ###  김보성 : Frontend
 
